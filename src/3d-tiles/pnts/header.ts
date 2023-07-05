@@ -18,7 +18,7 @@ function create({
 }: Buffers) {
   const buffer = Buffer.alloc(Constants.headerSize)
 
-  if (featureTableHeader.length % 8 !== 0) {
+  if ((Constants.headerSize + featureTableHeader.length) % 8 !== 0) {
     throw new EptToolsError(
       `Invalid feature table JSON size: ${featureTableHeader.length}`
     )

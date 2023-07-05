@@ -5,6 +5,8 @@ import { padEnd } from '3d-tiles/utils'
 import { Header } from './header'
 import { Params } from '../types'
 
+import * as Constants from './constants'
+
 export * as Constants from './constants'
 
 export type { BatchTable, FeatureTable }
@@ -19,7 +21,10 @@ export function translate(params: Params) {
     binary: batchTableBinary,
   } = BatchTable.create(params.view, params.options)
 
-  const featureTableHeader = toStringBuffer(featureTableHeaderObject)
+  const featureTableHeader = toStringBuffer(
+    featureTableHeaderObject,
+    Constants.headerSize
+  )
   const batchTableHeader = toStringBuffer(batchTableHeaderObject)
 
   const header = Header.create({
@@ -38,6 +43,6 @@ export function translate(params: Params) {
   ])
 }
 
-function toStringBuffer(o: object) {
-  return padEnd(Buffer.from(JSON.stringify(o)), 0x20)
+function toStringBuffer(o: object, e = 0) {
+  return padEnd(Buffer.from(JSON.stringify(o)), 0x20, e)
 }
