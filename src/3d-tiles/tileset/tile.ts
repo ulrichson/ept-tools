@@ -72,7 +72,7 @@ function translate({
     content: { uri: `${Key.stringify(key)}.${extension}` },
     boundingVolume: { region },
     geometricError,
-    children,
+    children: children.length === 0 ? undefined : children,
   }
   if (Key.depth(key) === 0) tile.refine = 'ADD'
   return tile
