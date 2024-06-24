@@ -1,6 +1,6 @@
 # Tiling options
 
-The translation of [EPT](https://entwine.io/entwine-point-tile.html) [3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) may require some decisions by the user. For example, XYZ and RGB (if present) attributes are always included, but in some cases other attributes may be desired as well. `Intensity`, `Classification`, or native `Z` coordinates (prior to earth-centered earth-fixed reprojection) may be useful for coloring. Another example may be a dynamic height offset. Options like these can be controlled by query parameters for the [serve](serve.md) application or by command line for the [tile](tile.md) application.
+The translation of [EPT](https://entwine.io/entwine-point-tile.html) [3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) may require some decisions by the user. For example, XYZ and RGB (if present) attributes are always included, but in some cases other attributes may be desired as well. `Intensity`, `Classification`, or native `Z` coordinates (prior to earth-centered earth-fixed reprojection) may be useful for coloring. Another example may be a dynamic height offset.
 
 ## Options
 
@@ -11,7 +11,6 @@ The `dimensions` option selects additional dimensions from the EPT schema to be 
 Examples:
 
 ```
-?dimensions=Z,Classification,Intensity # serve
 --dimensions Z Classification Intensity # tile
 ```
 
@@ -22,7 +21,6 @@ The `z-offset` option dynamically offsets the height of the resulting point clou
 Examples:
 
 ```
-?z-offset=50 # serve
 --z-offset 50 # tile
 ```
 
@@ -33,6 +31,5 @@ When RGB attributes are present, they must be written as 8-bit values in complia
 Examples:
 
 ```
-?truncate # serve
 --truncate # tile
 ```

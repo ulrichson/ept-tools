@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import { Cli } from './cli'
-export * as Lambda from './lambda'
 
 export { Cli }
 
