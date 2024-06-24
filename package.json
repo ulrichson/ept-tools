@@ -10,7 +10,7 @@
   "scripts": {
     "build": "ttsc -p tsconfig.build.json && copyfiles -f src/lib/* lib/lib/",
     "dev": "ts-node -r tsconfig-paths/register src/app/index.ts",
-    "prepublish": "$npm_execpath build",
+    "prepublish": "$npm_execpath run build",
     "test": "jest"
   },
   "dependencies": {
