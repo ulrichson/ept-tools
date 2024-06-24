@@ -1,8 +1,9 @@
 import { Header } from './header'
+import { Constants } from './pnts'
 
 // Valid sizes must all be a multiple of 8.
 const buffers = {
-  featureTableHeader: Buffer.alloc(8 * 4),
+  featureTableHeader: Buffer.alloc(Constants.headerSize + 8 * 4),
   featureTableBinary: Buffer.alloc(8 * 3 * 24),
   batchTableHeader: Buffer.alloc(8 * 6),
   batchTableBinary: Buffer.alloc(8 * 512),
