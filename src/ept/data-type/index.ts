@@ -5,18 +5,17 @@ import { View } from '../view'
 
 import { Binary } from './binary'
 import { Laszip } from './laszip'
-import { Zstandard } from './zstandard'
 
-export type DataType = 'binary' | 'laszip' | 'zstandard'
+export type DataType = 'binary' | 'laszip'
 const schema: JsonSchema = {
   title: 'Data type',
   description: 'Point data encoding',
   type: 'string',
-  enum: ['binary', 'laszip', 'zstandard'],
+  enum: ['binary', 'laszip'],
 }
 export const DataType = { schema, extension, view }
 
-const extensions = { binary: 'bin', laszip: 'laz', zstandard: 'zst' }
+const extensions = { binary: 'bin', laszip: 'laz' }
 function extension(type: DataType): string {
   return extensions[type]
 }
@@ -31,8 +30,6 @@ async function view(
       return Binary.view(buffer, schema)
     case 'laszip':
       return Laszip.view(buffer)
-    case 'zstandard':
-      return Zstandard.view(buffer, schema)
     default:
       throw new Error(`Invalid data type ${dataType}`)
   }

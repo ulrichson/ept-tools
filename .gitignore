@@ -3,3 +3,4 @@ lib/**
 coverage/**
 lambda/**
 src/test/data/tmp/**
+dist/**

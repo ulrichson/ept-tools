@@ -1,6 +1,6 @@
 # ept tile
 
-Translate an Entwine Point Tile dataset to [3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) on disk. See [`ept serve`](serve.md) for on-the-fly tileset generation.
+Translate an Entwine Point Tile dataset to [3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) on disk.
 
 ```bash
 index.ts tile [input]
