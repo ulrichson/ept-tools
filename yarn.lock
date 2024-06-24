@@ -708,6 +708,11 @@
   dependencies:
     "@types/yargs-parser" "*"
 
+"@vercel/ncc@^0.38.1":
+  version "0.38.1"
+  resolved "https://registry.npmjs.org/@vercel/ncc/-/ncc-0.38.1.tgz"
+  integrity sha512-IBBb+iI2NLu4VQn3Vwldyi2QwaXt5+hTyh58ggAMoCGE6DJmPvwL3KPBWcJl1m9LYPChBLE980Jw+CS4Wokqxw==
+
 "@zerollup/ts-helpers@^1.7.18":
   version "1.7.18"
   resolved "https://registry.npmjs.org/@zerollup/ts-helpers/-/ts-helpers-1.7.18.tgz"
